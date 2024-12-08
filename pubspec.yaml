@@ -39,10 +39,16 @@ flutter:
     - images/dokter2.png
     - images/dokter3.png
     - images/Logo RS sentosa.png
-    - lib/icons/Adik.jpeg
-    - lib/icons/Aul.jpeg
-    - lib/icons/Cela.jpeg
-    - lib/icons/Dian.jpeg
+    - lib/icons/adek.png
+    - lib/icons/aul.png
+    - lib/icons/cela.png
+    - lib/icons/dingan.png
+    - lib/icons/Star.png
+    - lib/icons/stetoskop.png
+    - lib/icons/rumah sakit.png
+    - lib/icons/ambulans.png
+    - lib/icons/check.png
+    - lib/icons/arrow.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

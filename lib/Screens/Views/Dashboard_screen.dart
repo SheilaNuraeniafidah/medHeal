@@ -175,6 +175,23 @@ class Dashboard extends StatelessWidget {
                       subtext: "Spesialis Saraf"
                     ) , 
                   ),
+                  GestureDetector(
+                    onTap: (){
+                      Navigator.push(
+                        context, 
+                        PageTransition(
+                        child: const DoctorDetails3(), 
+                        type: PageTransitionType.rightToLeft,
+                        )
+                      );
+                    },
+                    child:const list_doctor1(
+                      image: "lib/icons/dingan.png",
+                      maintext: "Dr. Dian F",
+                      numRating: "4.7",
+                      subtext: "Spesialis Anak"
+                    ) , 
+                  ),
                 ],
               ),
             ),

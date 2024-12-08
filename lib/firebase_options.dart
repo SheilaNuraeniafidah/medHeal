@@ -41,51 +41,49 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyBtmvSrDwc-LfU-Z3MLDJkxGeFuSJ75L0Q',
-    appId: '1:1069088958634:web:a41a39c512abba9008c8d3',
-    messagingSenderId: '1069088958634',
-    projectId: 'rssentosa-82d6d',
-    authDomain: 'rssentosa-82d6d.firebaseapp.com',
-    storageBucket: 'rssentosa-82d6d.firebasestorage.app',
-    measurementId: 'G-ZLCPQCR433',
+    apiKey: 'AIzaSyAxPiuy3Ai0JwHVv_CQTBJKH9Qiwh7ypP8',
+    appId: '1:930913228064:web:9a374375388ccfff3af345',
+    messagingSenderId: '930913228064',
+    projectId: 'datasentosa-1d329',
+    authDomain: 'datasentosa-1d329.firebaseapp.com',
+    storageBucket: 'datasentosa-1d329.firebasestorage.app',
+    measurementId: 'G-93KZ2QBV7X',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyAUmOYkxZGBTVfB-gc8a76IFMGlfj8z43I',
-    appId: '1:1069088958634:android:0300b58c9d5a21a408c8d3',
-    messagingSenderId: '1069088958634',
-    projectId: 'rssentosa-82d6d',
-    storageBucket: 'rssentosa-82d6d.firebasestorage.app',
+    apiKey: 'AIzaSyBTytEgtE3RQF0TtBKxuKaQyQQ5Qw9vW4g',
+    appId: '1:930913228064:android:0db45b7299a205173af345',
+    messagingSenderId: '930913228064',
+    projectId: 'datasentosa-1d329',
+    storageBucket: 'datasentosa-1d329.firebasestorage.app',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyDYQOn4Agz2g4LLAKul4CfH72in3PpBTNA',
-    appId: '1:1069088958634:ios:1313e69386c5ad0e08c8d3',
-    messagingSenderId: '1069088958634',
-    projectId: 'rssentosa-82d6d',
-    storageBucket: 'rssentosa-82d6d.firebasestorage.app',
-    iosClientId: '1069088958634-pg02euioc56ug3fa3j98e9d6s9n13d4d.apps.googleusercontent.com',
+    apiKey: 'AIzaSyDFd-i2ItZoNbFyqTq8TOUm3OilMlFUYDU',
+    appId: '1:930913228064:ios:bd8191a2be6c34bb3af345',
+    messagingSenderId: '930913228064',
+    projectId: 'datasentosa-1d329',
+    storageBucket: 'datasentosa-1d329.firebasestorage.app',
     iosBundleId: 'com.example.medheal',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyDYQOn4Agz2g4LLAKul4CfH72in3PpBTNA',
-    appId: '1:1069088958634:ios:1313e69386c5ad0e08c8d3',
-    messagingSenderId: '1069088958634',
-    projectId: 'rssentosa-82d6d',
-    storageBucket: 'rssentosa-82d6d.firebasestorage.app',
-    iosClientId: '1069088958634-pg02euioc56ug3fa3j98e9d6s9n13d4d.apps.googleusercontent.com',
+    apiKey: 'AIzaSyDFd-i2ItZoNbFyqTq8TOUm3OilMlFUYDU',
+    appId: '1:930913228064:ios:bd8191a2be6c34bb3af345',
+    messagingSenderId: '930913228064',
+    projectId: 'datasentosa-1d329',
+    storageBucket: 'datasentosa-1d329.firebasestorage.app',
     iosBundleId: 'com.example.medheal',
   );
 
   static const FirebaseOptions windows = FirebaseOptions(
-    apiKey: 'AIzaSyBtmvSrDwc-LfU-Z3MLDJkxGeFuSJ75L0Q',
-    appId: '1:1069088958634:web:42f954304d74854808c8d3',
-    messagingSenderId: '1069088958634',
-    projectId: 'rssentosa-82d6d',
-    authDomain: 'rssentosa-82d6d.firebaseapp.com',
-    storageBucket: 'rssentosa-82d6d.firebasestorage.app',
-    measurementId: 'G-Z90FW65F1K',
+    apiKey: 'AIzaSyAxPiuy3Ai0JwHVv_CQTBJKH9Qiwh7ypP8',
+    appId: '1:930913228064:web:f58c902b6c5e1bd83af345',
+    messagingSenderId: '930913228064',
+    projectId: 'datasentosa-1d329',
+    authDomain: 'datasentosa-1d329.firebaseapp.com',
+    storageBucket: 'datasentosa-1d329.firebasestorage.app',
+    measurementId: 'G-LKEMWXW90N',
   );
 
 }

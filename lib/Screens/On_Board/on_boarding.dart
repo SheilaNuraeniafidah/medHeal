@@ -126,9 +126,9 @@ class _on_boardingState extends State<on_boarding> {
                               ),
                               SizedBox(
                                 height:
-                                    MediaQuery.of(context).size.height * 0.06,
-                                width: MediaQuery.of(context).size.width * 0.06,
-                                child: Image.asset("lib/icons/arrow.png"),
+                                  MediaQuery.of(context).size.height * 0.06,
+                                  width: MediaQuery.of(context).size.width * 0.06,
+                                  child: Image.asset("lib/icons/arrow.png"),
                               ),
                             ],
                           ),
