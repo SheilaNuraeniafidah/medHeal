@@ -5,7 +5,6 @@ import 'package:medical/Screens/Login-Signup/shedule_screen.dart';
 import 'package:medical/Screens/Widgets/doctorList.dart';
 import 'package:page_transition/page_transition.dart';
 
-import 'doctor_details_2.dart';
 
 class Appointment extends StatefulWidget {
   final String selectedDate;

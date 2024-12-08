@@ -4,9 +4,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:medical/Screens/Login-Signup/shedule_screen.dart';
 import 'package:medical/Screens/Widgets/doctorList.dart';
 import 'package:page_transition/page_transition.dart';
-
 import 'Homepage.dart';
-import 'doctor_details_3.dart';
+
 
 class Appointment2 extends StatefulWidget {
   final String selectedDate;
