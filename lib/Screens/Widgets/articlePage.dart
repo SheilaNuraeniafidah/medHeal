@@ -4,7 +4,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:medical/Screens/Views/Homepage.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:page_transition/page_transition.dart';
-import 'package:medical/Screens/Views/mysave.dart';
 
 class Article {
   final String id;
@@ -57,9 +56,7 @@ Future<List<Article>> fetchArtikel() async {
 }
 
 class ArticlePage extends StatefulWidget {
-  final List<Article> savedArticles;
-
-  const ArticlePage({Key? key, required this.savedArticles}) : super(key: key);
+  const ArticlePage({Key? key}) : super(key: key);
 
   @override
   _ArticlePageState createState() => _ArticlePageState();
@@ -68,7 +65,6 @@ class ArticlePage extends StatefulWidget {
 class _ArticlePageState extends State<ArticlePage> {
   List<Article> artikel = [];
   List<Article> filteredArtikel = [];
-  List<Article> savedArticles = [];
   TextEditingController searchController = TextEditingController();
   FocusNode focusNode = FocusNode();
 
@@ -84,8 +80,8 @@ class _ArticlePageState extends State<ArticlePage> {
     super.initState();
     fetchArtikel().then((fetchedArtikel) {
       setState(() {
-        artikel = fetchedArtikel; // Memastikan data artikel dimuat dengan benar
-        filteredArtikel = fetchedArtikel; // Menampilkan semua artikel pada awalnya
+        artikel = fetchedArtikel;
+        filteredArtikel = fetchedArtikel;
       });
     });
 
@@ -101,17 +97,7 @@ class _ArticlePageState extends State<ArticlePage> {
     }).toList();
 
     setState(() {
-      filteredArtikel = filtered; // Memperbarui artikel yang ditampilkan
-    });
-  }
-
-  void toggleBookmark(Article article) {
-    setState(() {
-      if (savedArticles.any((saved) => saved.id == article.id)) {
-        savedArticles.removeWhere((saved) => saved.id == article.id); // Hapus dari bookmark jika sudah ada
-      } else {
-        savedArticles.add(article); // Tambahkan ke bookmark jika belum ada
-      }
+      filteredArtikel = filtered;
     });
   }
 
@@ -124,9 +110,9 @@ class _ArticlePageState extends State<ArticlePage> {
         body: SingleChildScrollView(
           child: Column(
             children: [
-              const SizedBox(height: 10), // Jeda di atas search bar
+              const SizedBox(height: 10),
               _buildSearchBar(context),
-              const SizedBox(height: 15), // Jeda di bawah search bar
+              const SizedBox(height: 15),
               _buildSectionTitle("Popular Artikel"),
               _buildArtikelList(filteredArtikel),
               const SizedBox(height: 20),
@@ -172,31 +158,13 @@ class _ArticlePageState extends State<ArticlePage> {
           );
         },
       ),
-      actions: [
-        IconButton(
-          icon: SizedBox(
-            height: MediaQuery.of(context).size.height * 0.06,
-            width: MediaQuery.of(context).size.width * 0.06,
-            child: Image.asset("lib/icons/Bookmark.png"),
-          ),
-          onPressed: () {
-            Navigator.pushReplacement(
-              context,
-              PageTransition(
-                type: PageTransitionType.rightToLeft,
-                child: MySave(savedArticles: savedArticles),
-              ),
-            );
-          },
-        ),
-      ],
     );
   }
 
   Widget _buildSearchBar(BuildContext context) {
     return Center(
       child: Container(
-        height: 45, // Reduced height
+        height: 45,
         width: MediaQuery.of(context).size.width * 0.85,
         child: TextField(
           controller: searchController,
@@ -206,7 +174,7 @@ class _ArticlePageState extends State<ArticlePage> {
             filled: true,
             prefixIcon: Padding(
               padding: const EdgeInsets.all(10.0),
-              child: Image.asset('lib/icons/search.png', height: 12, width: 12), // Smaller icon
+              child: Image.asset('lib/icons/search.png', height: 12, width: 12),
             ),
             labelText: "Cari Artikel",
             border: OutlineInputBorder(
@@ -226,7 +194,7 @@ class _ArticlePageState extends State<ArticlePage> {
         children: [
           Text(
             title,
-            style: GoogleFonts.poppins(fontSize: 16, fontWeight: FontWeight.w600, color: const Color(0xFF40BEF0)),
+            style: GoogleFonts.poppins(fontSize: 14, fontWeight: FontWeight.w600, color: const Color(0xFF40BEF0)),
           ),
         ],
       ),
@@ -284,11 +252,11 @@ class _ArticlePageState extends State<ArticlePage> {
               child: imageUrl != null && imageUrl.isNotEmpty
                   ? Image.network(
                       imageUrl,
-                      width: 60, // Smaller image
-                      height: 60,
+                      width: 150, // Increased image size
+                      height: 100,
                       fit: BoxFit.cover,
                     )
-                  : const Icon(Icons.article, size: 60, color: Colors.grey),
+                  : const Icon(Icons.article, size: 80, color: Colors.grey),
             ),
             const SizedBox(width: 10),
             Expanded(
@@ -297,38 +265,22 @@ class _ArticlePageState extends State<ArticlePage> {
                 children: [
                   Text(
                     article.judul,
-                    style: GoogleFonts.poppins(fontSize: 14, fontWeight: FontWeight.w600),
+                    style: GoogleFonts.poppins(fontSize: 12, fontWeight: FontWeight.w600), // Smaller text
                   ),
                   const SizedBox(height: 5),
                   Text(
                     article.isi,
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
-                    style: GoogleFonts.poppins(fontSize: 12, color: Colors.grey),
+                    style: GoogleFonts.poppins(fontSize: 10, color: Colors.grey), // Smaller text
                   ),
                   const SizedBox(height: 5),
                   Text(
                     'Kategori: ${article.kategori}',
-                    style: GoogleFonts.poppins(fontSize: 10, color: Colors.grey),
+                    style: GoogleFonts.poppins(fontSize: 8, color: Colors.grey), // Smaller text
                   ),
                 ],
               ),
-            ),
-            IconButton(
-              icon: savedArticles.any((saved) => saved.id == article.id)
-                  ? ImageIcon(
-                      AssetImage('lib/icons/Bookmark.png'),
-                      size: 1, // Ukuran gambar yang lebih besar
-                      color: Colors.blue, // Opsional, untuk mengganti warna
-                    )
-                  : ImageIcon(
-                      AssetImage('lib/icons/Bookmark.png'),
-                      size: 1, // Ukuran gambar yang lebih besar
-                      color: Colors.grey,
-                    ),
-              onPressed: () {
-                toggleBookmark(article);  // Panggil toggleBookmark hanya untuk artikel yang diklik
-              },
             ),
           ],
         ),

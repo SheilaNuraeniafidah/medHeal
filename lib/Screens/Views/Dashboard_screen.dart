@@ -261,7 +261,7 @@ class Dashboard extends StatelessWidget {
                         context,
                         PageTransition(
                             type: PageTransitionType.rightToLeft,
-                            child: const ArticlePage(savedArticles: [],)));
+                            child: const ArticlePage()));
                   },
                   child: Text(
                     "Lihat Semua",
