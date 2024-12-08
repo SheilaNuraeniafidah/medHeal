@@ -4,7 +4,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:medical/Screens/Views/Homepage.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:page_transition/page_transition.dart';
-import 'package:medical/Screens/Views/mysave.dart';
 
 class Article {
   final String id;
