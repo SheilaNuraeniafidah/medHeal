@@ -52,7 +52,7 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyAUmOYkxZGBTVfB-gc8a76IFMGlfj8z43I',
-    appId: '1:1069088958634:android:2e55b77ab68c716d08c8d3',
+    appId: '1:1069088958634:android:0300b58c9d5a21a408c8d3',
     messagingSenderId: '1069088958634',
     projectId: 'rssentosa-82d6d',
     storageBucket: 'rssentosa-82d6d.firebasestorage.app',
@@ -60,20 +60,22 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyDYQOn4Agz2g4LLAKul4CfH72in3PpBTNA',
-    appId: '1:1069088958634:ios:fc513b42c35d5bbb08c8d3',
+    appId: '1:1069088958634:ios:1313e69386c5ad0e08c8d3',
     messagingSenderId: '1069088958634',
     projectId: 'rssentosa-82d6d',
     storageBucket: 'rssentosa-82d6d.firebasestorage.app',
-    iosBundleId: 'com.example.medics',
+    iosClientId: '1069088958634-pg02euioc56ug3fa3j98e9d6s9n13d4d.apps.googleusercontent.com',
+    iosBundleId: 'com.example.medheal',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
     apiKey: 'AIzaSyDYQOn4Agz2g4LLAKul4CfH72in3PpBTNA',
-    appId: '1:1069088958634:ios:fc513b42c35d5bbb08c8d3',
+    appId: '1:1069088958634:ios:1313e69386c5ad0e08c8d3',
     messagingSenderId: '1069088958634',
     projectId: 'rssentosa-82d6d',
     storageBucket: 'rssentosa-82d6d.firebasestorage.app',
-    iosBundleId: 'com.example.medics',
+    iosClientId: '1069088958634-pg02euioc56ug3fa3j98e9d6s9n13d4d.apps.googleusercontent.com',
+    iosBundleId: 'com.example.medheal',
   );
 
   static const FirebaseOptions windows = FirebaseOptions(
@@ -85,4 +87,5 @@ class DefaultFirebaseOptions {
     storageBucket: 'rssentosa-82d6d.firebasestorage.app',
     measurementId: 'G-Z90FW65F1K',
   );
+
 }
