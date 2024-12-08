@@ -2,6 +2,9 @@ import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.da
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:medical/Screens/Views/Dashboard_screen.dart';
+import 'package:medical/Screens/Views/doctor_search.dart';
+import 'package:medical/Screens/Login-Signup/Profile_screen.dart';
+import 'package:medical/Screens/Views/rumahSakit_screen.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
@@ -21,7 +24,10 @@ class _HomepageState extends State<Homepage> {
   int page = 0;
 
   List<Widget> pages = [
-    const Dashboard()
+    const Dashboard(),
+    const doctor_search(),
+    const RumahSakitScreen(),
+    const Profile_screen(savedArticles: [],),
   ];
 
   @override
