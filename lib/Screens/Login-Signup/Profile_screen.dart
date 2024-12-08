@@ -106,10 +106,10 @@ class Profile_screen extends StatelessWidget {
                         ),
                       );
                     },
-                    child: profile_list(
+                    child: const profile_list(
                       image: "lib/icons/appoint.png",
                       title: "Appointment",
-                      color: const Color(0xFF40bef0), // Set color to #40bef0
+                      color: Color(0xFF40bef0), // Set color to #40bef0
                     ),
                   ),
                   const Padding(

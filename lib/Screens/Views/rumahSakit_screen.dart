@@ -92,7 +92,7 @@ class _RumahSakitScreenState extends State<RumahSakitScreen> {
                       child: SmoothPageIndicator(
                         controller: _pageController,
                         count: 5,
-                        effect: ExpandingDotsEffect(
+                        effect: const ExpandingDotsEffect(
                           activeDotColor: Colors.blue,
                           dotHeight: 8,
                           dotWidth: 8,
@@ -127,7 +127,7 @@ class _RumahSakitScreenState extends State<RumahSakitScreen> {
                           ),
                         ],
                       ),
-                      SizedBox(height: 8),
+                      const SizedBox(height: 8),
                       Row(
                         children: [
                           Image.asset("lib/icons/maps.png"),
@@ -138,7 +138,7 @@ class _RumahSakitScreenState extends State<RumahSakitScreen> {
                           ),
                         ],
                       ),
-                      SizedBox(height: 10),
+                      const SizedBox(height: 10),
                       Text(
                         "Rumah sakit terkemuka dengan fasilitas kesehatan modern yang menyediakan layanan medis berkualitas dengan berbagai spesialisasi.",
                         style: GoogleFonts.poppins(
@@ -153,7 +153,7 @@ class _RumahSakitScreenState extends State<RumahSakitScreen> {
                       Row(
                         children: [
                           Image.asset("lib/icons/Star.png"),
-                          SizedBox(width: 4),
+                          const SizedBox(width: 4),
                           Text(
                             "4.9 (4097 Reviews)",
                             style: GoogleFonts.poppins(
@@ -228,7 +228,7 @@ class _RumahSakitScreenState extends State<RumahSakitScreen> {
   Widget _buildStatItem(String value, String label, String iconPath) {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 1.w, vertical: 1.h),
-      padding: EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(8.0),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(8.0),
@@ -237,7 +237,7 @@ class _RumahSakitScreenState extends State<RumahSakitScreen> {
             color: Colors.grey.withOpacity(0.3),
             spreadRadius: 2,
             blurRadius: 5,
-            offset: Offset(0, 3),
+            offset: const Offset(0, 3),
           ),
         ],
       ),

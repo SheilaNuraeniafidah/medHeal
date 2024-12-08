@@ -9,6 +9,8 @@ import 'package:medical/Screens/Views/Homepage.dart';
 import 'package:page_transition/page_transition.dart';
 
 class ScheduleScreen extends StatefulWidget {
+  const ScheduleScreen({super.key});
+
   @override
   _ScheduleScreenState createState() => _ScheduleScreenState();
 }
@@ -119,7 +121,7 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
               context,
               PageTransition(
               type: PageTransitionType.rightToLeft,
-              child: Homepage()));
+              child: const Homepage()));
           },
         ),
 
@@ -131,7 +133,7 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
             fontWeight: FontWeight.bold,
           ),
         ),
-        backgroundColor: Color.fromARGB(255, 248, 249, 250),
+        backgroundColor: const Color.fromARGB(255, 248, 249, 250),
         elevation: 0,
         toolbarHeight: 80,
         centerTitle: true,
@@ -154,7 +156,7 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
             length: 3,
             child: Column(
               children: [
-                TabBar(
+                const TabBar(
                   indicatorColor: Color(0xFF40bef0),
                   labelColor: Colors.black,
                   unselectedLabelColor: Colors.grey,
@@ -268,11 +270,11 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
                           _navigateToDetail(context, appointment);
                         },
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: Color(0xFF40bef0),
+                          backgroundColor: const Color(0xFF40bef0),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10),
                           ),
-                          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                         ),
                         child: Text(
                           'Lihat Detail',

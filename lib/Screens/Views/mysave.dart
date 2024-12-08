@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:medical/Screens/Views/articlePage.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:medical/Screens/Views/articlePage.dart';
 import 'package:page_transition/page_transition.dart';
 
 // Data contoh artikel yang disimpan
