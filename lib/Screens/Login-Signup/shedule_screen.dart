@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:medical/Screens/Views/appointment.dart';
-import 'package:medical/Screens/Views/appointment2.dart';
-import 'package:medical/Screens/Views/appointment3.dart';
-import 'package:medical/Screens/Views/appointment4.dart';
+import 'package:medical/Screens/Views/appointment_screen.dart';
+import 'package:medical/Screens/Views/appointment2_screen.dart';
+import 'package:medical/Screens/Views/appointment3_screen.dart';
+import 'package:medical/Screens/Views/appointment4_screen.dart';
 import 'package:medical/Screens/Views/Homepage.dart';
 import 'package:page_transition/page_transition.dart';
 

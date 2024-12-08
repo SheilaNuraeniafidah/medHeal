@@ -4,6 +4,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:medical/Screens/Views/Homepage.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:page_transition/page_transition.dart';
+import 'package:medical/Screens/Views/mysave.dart';
 
 class Article {
   final String id;
@@ -166,35 +167,35 @@ class _ArticlePageState extends State<ArticlePage> {
             context,
             PageTransition(
               type: PageTransitionType.rightToLeft,
-              child: const Homepage(),
+              child: Homepage(),
             ),
           );
         },
       ),
-      // actions: [
-      //   IconButton(
-      //     icon: SizedBox(
-      //       height: MediaQuery.of(context).size.height * 0.06,
-      //       width: MediaQuery.of(context).size.width * 0.06,
-      //       child: Image.asset("lib/icons/Bookmark.png"),
-      //     ),
-      //     onPressed: () {
-      //       Navigator.pushReplacement(
-      //         context,
-      //         PageTransition(
-      //           type: PageTransitionType.rightToLeft,
-      //           child: MySave(savedArticles: savedArticles),
-      //         ),
-      //       );
-      //     },
-      //   ),
-      // ],
+      actions: [
+        IconButton(
+          icon: SizedBox(
+            height: MediaQuery.of(context).size.height * 0.06,
+            width: MediaQuery.of(context).size.width * 0.06,
+            child: Image.asset("lib/icons/Bookmark.png"),
+          ),
+          onPressed: () {
+            Navigator.pushReplacement(
+              context,
+              PageTransition(
+                type: PageTransitionType.rightToLeft,
+                child: MySave(savedArticles: savedArticles),
+              ),
+            );
+          },
+        ),
+      ],
     );
   }
 
   Widget _buildSearchBar(BuildContext context) {
     return Center(
-      child: SizedBox(
+      child: Container(
         height: 45, // Reduced height
         width: MediaQuery.of(context).size.width * 0.85,
         child: TextField(
@@ -314,12 +315,17 @@ class _ArticlePageState extends State<ArticlePage> {
               ),
             ),
             IconButton(
-              icon: Icon(
-                savedArticles.any((saved) => saved.id == article.id) 
-                    ? Icons.bookmark 
-                    : Icons.bookmark_border,
-                
-              ),
+              icon: savedArticles.any((saved) => saved.id == article.id)
+                  ? ImageIcon(
+                      AssetImage('lib/icons/Bookmark.png'),
+                      size: 1, // Ukuran gambar yang lebih besar
+                      color: Colors.blue, // Opsional, untuk mengganti warna
+                    )
+                  : ImageIcon(
+                      AssetImage('lib/icons/Bookmark.png'),
+                      size: 1, // Ukuran gambar yang lebih besar
+                      color: Colors.grey,
+                    ),
               onPressed: () {
                 toggleBookmark(article);  // Panggil toggleBookmark hanya untuk artikel yang diklik
               },

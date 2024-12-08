@@ -59,6 +59,7 @@ flutter:
     - lib/icons/search.png
     - lib/icons/appoint.png
     - lib/icons/logout.png
+    - lib/icons/Bookmark.png
     - lib/icons/
 
   # An image asset can refer to one or more resolution-specific "variants", see

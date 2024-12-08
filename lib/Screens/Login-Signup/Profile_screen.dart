@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
+import 'package:medical/Screens/Login-Signup/shedule_screen.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
-import 'package:firebase_auth/firebase_auth.dart'; // Import Firebase Authentication
-import 'package:medical/Screens/Widgets/articlePage.dart'; // Import Artikel jika diperlukan
-import 'package:medical/Screens/Login-Signup/shedule_screen.dart'; // Import Appointment Page
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:medical/Screens/Widgets/articlePage.dart';
+import 'package:medical/Screens/Login-Signup/login_register_page.dart';
 
 class Profile_screen extends StatelessWidget {
   final List<Article> savedArticles;
@@ -13,72 +13,48 @@ class Profile_screen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Get current user from Firebase Auth
-    User? user = FirebaseAuth.instance.currentUser;
+    // Get the current logged-in user
+    final User? user = FirebaseAuth.instance.currentUser;
 
     return Scaffold(
-      backgroundColor: const Color(0xFF40bef0), // Changed to the specified color
+      backgroundColor: const Color(0xFF40bef0),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            const SizedBox(
-              height: 50,
-            ),
-            // Profile section with image, name, and email
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 25),
-              child: Row(
-                children: [
-                  // Profile image on the left
-                  Container(
-                    width: 60,
-                    height: 60,
-                    decoration: BoxDecoration(
-                      border: Border.all(width: 4, color: Colors.white),
-                      boxShadow: [
-                        BoxShadow(
-                          spreadRadius: 2,
-                          blurRadius: 10,
-                          color: Colors.black.withOpacity(0.1),
-                        ),
-                      ],
-                      shape: BoxShape.circle,
-                      image: const DecorationImage(
-                        image: AssetImage("lib/icons/avatar.png"),
-                        fit: BoxFit.cover,
-                      ),
+            const SizedBox(height: 50),
+            // Profile image in the center
+            Center(
+              child: Container(
+                width: 120,
+                height: 120,
+                decoration: BoxDecoration(
+                  border: Border.all(width: 4, color: Colors.white),
+                  boxShadow: [
+                    BoxShadow(
+                      spreadRadius: 2,
+                      blurRadius: 10,
+                      color: Colors.black.withOpacity(0.1),
                     ),
+                  ],
+                  shape: BoxShape.circle,
+                  image: const DecorationImage(
+                    image: AssetImage("lib/icons/akun2.png"),
+                    fit: BoxFit.cover,
                   ),
-                  const SizedBox(width: 20),
-                  // Name and email from Firebase Authentication
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        user?.displayName ?? 'User Name',
-                        style: GoogleFonts.poppins(
-                          fontSize: 18.sp,
-                          fontWeight: FontWeight.w600,
-                          color: Colors.white,
-                        ),
-                      ),
-                      const SizedBox(height: 5),
-                      Text(
-                        user?.email ?? 'user@example.com',
-                        style: GoogleFonts.poppins(
-                          fontSize: 14.sp,
-                          fontWeight: FontWeight.w400,
-                          color: Colors.white70,
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
+                ),
               ),
             ),
-            const SizedBox(
-              height: 30,
+            const SizedBox(height: 20),
+            // Email or username below the profile image
+            Text(
+              user?.email ?? 'user@example.com', // Show email or default
+              style: GoogleFonts.poppins(
+                fontSize: 18.sp,
+                fontWeight: FontWeight.w600,
+                color: Colors.white,
+              ),
             ),
+            const SizedBox(height: 30),
             // Main menu
             Container(
               height: 550,
@@ -92,35 +68,45 @@ class Profile_screen extends StatelessWidget {
               ),
               child: Column(
                 children: [
-                  const SizedBox(
-                    height: 50,
-                  ),
-                  // Appointment with ColorFiltered for icon color change
+                  const SizedBox(height: 50),
+                  // Appointment Section
                   GestureDetector(
                     onTap: () {
-                      // Navigate to the Appointment Page
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const ScheduleScreen(), // Assuming AppointmentPage is the page
+                          builder: (context) => const ScheduleScreen(),
                         ),
                       );
                     },
                     child: const profile_list(
                       image: "lib/icons/appoint.png",
                       title: "Appointment",
-                      color: Color(0xFF40bef0), // Set color to #40bef0
+                      color: Color(0xFF40bef0),
                     ),
                   ),
                   const Padding(
                     padding: EdgeInsets.symmetric(horizontal: 25, vertical: 10),
                     child: Divider(),
                   ),
-                  // Logout
-                  const profile_list(
-                    image: "lib/icons/logout.png",
-                    title: "Log out",
-                    color: Colors.red,
+                  // Logout Section
+                  GestureDetector(
+                    onTap: () async {
+                      // Logout dari Firebase Authentication
+                      await FirebaseAuth.instance.signOut();
+
+                      // Navigasi ke Homepage
+                      Navigator.pushAndRemoveUntil(
+                        context,
+                        MaterialPageRoute(builder: (context) => const LoginPage()),
+                        (route) => false, // Menghapus semua halaman sebelumnya dari stack
+                      );
+                    },
+                    child: const profile_list(
+                      image: "lib/icons/logout.png",
+                      title: "Log out",
+                      color: Colors.red,
+                    ),
                   ),
                 ],
               ),
@@ -151,7 +137,7 @@ class profile_list extends StatelessWidget {
       child: Row(
         children: [
           ColorFiltered(
-            colorFilter: ColorFilter.mode(color, BlendMode.srcIn), // Apply color filter
+            colorFilter: ColorFilter.mode(color, BlendMode.srcIn),
             child: Image.asset(
               image,
               height: 30,
