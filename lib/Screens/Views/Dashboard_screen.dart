@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:medical/Screens/Views/doctor_details_2.dart';
+import 'package:medical/Screens/Views/doctor_details_3.dart';
+import 'package:medical/Screens/Views/doctor_details_4.dart';
+import 'package:medical/Screens/Views/doctor_search.dart';
 // import 'package:medical/Screens/Views/doctor_search.dart';
 // import 'package:medical/Screens/Widgets/article.dart';
 import 'package:medical/Screens/Widgets/banner.dart';
 import 'package:medical/Screens/Widgets/list_doctor1.dart';
 import 'package:medical/Screens/Widgets/listicons.dart';
+import 'package:page_transition/page_transition.dart';
 //import 'package:page_transition/page_transition.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
@@ -57,7 +62,7 @@ class Dashboard extends StatelessWidget {
             height: 20,
           ),
           //Body Start fro here
-          Row(
+          const Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               listIcons(Icon: "lib/icons/stetoskop.png", text: "Dokter"),
@@ -89,13 +94,13 @@ class Dashboard extends StatelessWidget {
                   ),
                 ),
                 GestureDetector(
-                  // onTap: () {
-                  //   Navigator.pushReplacement(
-                  //       context,
-                  //       PageTransition(
-                  //           type: PageTransitionType.rightToLeft,
-                  //           child: const doctor_search()));
-                  // },
+                  onTap: () {
+                    Navigator.pushReplacement(
+                        context,
+                        PageTransition(
+                            type: PageTransitionType.rightToLeft,
+                            child: const doctor_search()));
+                  },
                   child: Text(
                     "Lihat Semua",
                     style: GoogleFonts.inter(
@@ -118,27 +123,58 @@ class Dashboard extends StatelessWidget {
               child: ListView(
                 physics: const BouncingScrollPhysics(),
                 scrollDirection: Axis.horizontal,
-                children: const [
-                  list_doctor1(
-                      image: "lib/icons/Adik.jpeg",
+                children: [
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        PageTransition(
+                          type: PageTransitionType.rightToLeft,
+                          child: const DoctorDetails2(),
+                        )
+                      );
+                    },
+                    child:const list_doctor1(
+                      image: "lib/icons/adek.png",
                       maintext: "Dr. Adik N",
                       numRating: "4.8",
-                      subtext: "Spesial Kandungan"),
-                  list_doctor1(
-                      image: "lib/icons/Dian.jpeg",
-                      maintext: "Dr. Dian F",
-                      numRating: "4.7",
-                      subtext: "Spesialis Anak"),
-                  list_doctor1(
-                      image: "lib/icons/Cela.jpeg",
-                      maintext: "Dr. Sheila N",
-                      numRating: "4.8",
-                      subtext: "Spesialis Saraf"),
-                  list_doctor1(
-                      image: "lib/icons/Aul.jpeg",
+                      subtext: "Spesialis Kandungan"
+                    ) ,               
+                  ),
+                  GestureDetector(
+                    onTap: (){
+                      Navigator.push(
+                        context, 
+                        PageTransition(
+                        child: const DoctorDetails4(), 
+                        type: PageTransitionType.rightToLeft,
+                        )
+                      );
+                    },
+                    child:const list_doctor1(
+                      image: "lib/icons/aul.png",
                       maintext: "Dr. Annisa A",
                       numRating: "4.7",
-                      subtext: "Spesialis Mata"),
+                      subtext: "Spesialis Mata"
+                    ) , 
+                  ),
+                  GestureDetector(
+                    onTap: (){
+                      Navigator.push(
+                        context, 
+                        PageTransition(
+                        child: const DoctorDetails3(), 
+                        type: PageTransitionType.rightToLeft,
+                        )
+                      );
+                    },
+                    child:const list_doctor1(
+                      image: "lib/icons/cela.png",
+                      maintext: "Dr. Sheila N",
+                      numRating: "4.9",
+                      subtext: "Spesialis Saraf"
+                    ) , 
+                  ),
                 ],
               ),
             ),

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:medical/auth.dart';
-import 'package:medical/Screens/Login-Signup/registerpage.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:medical/Screens/Login-Signup/registerpage.dart';
 import 'package:medical/Screens/Views/Homepage.dart';
+import 'package:medical/auth.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -74,11 +74,11 @@ class _LoginPageState extends State<LoginPage> {
           fillColor: Colors.blue[50],
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(12.0),
-            borderSide: BorderSide(color: Colors.blueAccent, width: 1.0),
+            borderSide: const BorderSide(color: Colors.blueAccent, width: 1.0),
           ),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(12.0),
-            borderSide: BorderSide(color: Colors.blueAccent, width: 2.0),
+            borderSide: const BorderSide(color: Colors.blueAccent, width: 2.0),
           ),
         ),
         style: GoogleFonts.poppins(fontSize: 16, color: Colors.black87),
@@ -158,7 +158,7 @@ class _LoginPageState extends State<LoginPage> {
                 Container(
                   height: 120,
                   width: 120,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     image: DecorationImage(
                       image: AssetImage('images/Logo RS sentosa.png'),
                       fit: BoxFit.contain,
