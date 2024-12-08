@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:medical/Screens/Views/articlePage.dart';
+import 'package:medical/Screens/Widgets/articlePage.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:page_transition/page_transition.dart';
 

@@ -4,13 +4,13 @@ import 'package:medical/Screens/Views/doctor_details_2.dart';
 import 'package:medical/Screens/Views/doctor_details_3.dart';
 import 'package:medical/Screens/Views/doctor_details_4.dart';
 import 'package:medical/Screens/Views/doctor_search.dart';
-// import 'package:medical/Screens/Views/doctor_search.dart';
-// import 'package:medical/Screens/Widgets/article.dart';
+import 'package:medical/Screens/Views/doctor_search.dart';
+import 'package:medical/Screens/Widgets/articlePage.dart';
 import 'package:medical/Screens/Widgets/banner.dart';
 import 'package:medical/Screens/Widgets/list_doctor1.dart';
 import 'package:medical/Screens/Widgets/listicons.dart';
 import 'package:page_transition/page_transition.dart';
-//import 'package:page_transition/page_transition.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 class Dashboard extends StatelessWidget {
@@ -215,13 +215,13 @@ class Dashboard extends StatelessWidget {
     
                  ),
                 GestureDetector(
-                  // onTap: () {
-                  //   Navigator.pushReplacement(
-                  //       context,
-                  //       PageTransition(
-                  //           type: PageTransitionType.rightToLeft,
-                  //           child: const articlePage()));
-                  // },
+                  onTap: () {
+                    Navigator.pushReplacement(
+                        context,
+                        PageTransition(
+                            type: PageTransitionType.rightToLeft,
+                            child: const ArticlePage(savedArticles: [],)));
+                  },
                   child: Text(
                     "Lihat Semua",
                     style: GoogleFonts.inter(
@@ -236,13 +236,7 @@ class Dashboard extends StatelessWidget {
           const SizedBox(
             height: 10,
           ),
-          // //Article banner here import from widget>article
-          // const article(
-          //     image: "images/bacaan.jpg",
-          //     dateText: " ",
-          //     duration: "",
-          //     mainText:
-          //         "Sudah mulai masuk musim hujan nih,\nyuk Jaga Kesehatan!"),
+                   
         ]),
       ),
     );

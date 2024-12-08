@@ -3,7 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:firebase_auth/firebase_auth.dart'; // Import Firebase Authentication
-import 'package:medical/Screens/Views/articlePage.dart'; // Import Artikel jika diperlukan
+import 'package:medical/Screens/Widgets/articlePage.dart'; // Import Artikel jika diperlukan
 import 'package:medical/Screens/Login-Signup/shedule_screen.dart'; // Import Appointment Page
 
 class Profile_screen extends StatelessWidget {
