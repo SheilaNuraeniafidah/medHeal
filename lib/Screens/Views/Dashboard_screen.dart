@@ -4,15 +4,13 @@ import 'package:medical/Screens/Views/doctor_details_2.dart';
 import 'package:medical/Screens/Views/doctor_details_3.dart';
 import 'package:medical/Screens/Views/doctor_details_4.dart';
 import 'package:medical/Screens/Views/doctor_search.dart';
-import 'package:medical/Screens/Views/doctor_search.dart';
 import 'package:medical/Screens/Widgets/articlePage.dart';
 import 'package:medical/Screens/Widgets/banner.dart';
 import 'package:medical/Screens/Widgets/list_doctor1.dart';
 import 'package:medical/Screens/Widgets/listicons.dart';
 import 'package:page_transition/page_transition.dart';
-import 'package:page_transition/page_transition.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
-
+import 'package:medical/Screens/Widgets/article.dart';
 class Dashboard extends StatelessWidget {
   const Dashboard({super.key});
 
@@ -236,7 +234,12 @@ class Dashboard extends StatelessWidget {
           const SizedBox(
             height: 10,
           ),
-                   
+          const article(
+              image: "images/article1.jpg",
+              dateText: "Jun 10, 2021 ",
+              duration: "5min read",
+              mainText:
+                  "The 25 Healthiest Fruits You Can Eat,\nAccording to a Nutritionist"),        
         ]),
       ),
     );

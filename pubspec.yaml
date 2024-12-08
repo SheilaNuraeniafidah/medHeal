@@ -36,6 +36,7 @@ dev_dependencies:
 flutter:
   assets:
     - images/
+    - images/article1.jpg
     - images/dokter1.png
     - images/dokter2.png
     - images/dokter3.png

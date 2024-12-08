@@ -77,14 +77,6 @@ class article extends StatelessWidget {
           const SizedBox(
             width: 25,
           ),
-          SizedBox(
-            height: MediaQuery.of(context).size.height * 0.07,
-            width: MediaQuery.of(context).size.width * 0.09,
-            child: Image.asset(
-              "lib/icons/Bookmark.png",
-              filterQuality: FilterQuality.high,
-            ),
-          ),
         ]),
       ),
     );

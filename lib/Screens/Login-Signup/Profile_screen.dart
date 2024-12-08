@@ -102,7 +102,7 @@ class Profile_screen extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => ScheduleScreen(), // Assuming AppointmentPage is the page
+                          builder: (context) => const ScheduleScreen(), // Assuming AppointmentPage is the page
                         ),
                       );
                     },

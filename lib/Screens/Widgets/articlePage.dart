@@ -172,24 +172,24 @@ class _ArticlePageState extends State<ArticlePage> {
           );
         },
       ),
-      actions: [
-        IconButton(
-          icon: SizedBox(
-            height: MediaQuery.of(context).size.height * 0.06,
-            width: MediaQuery.of(context).size.width * 0.06,
-            child: Image.asset("lib/icons/Bookmark.png"),
-          ),
-          onPressed: () {
-            Navigator.pushReplacement(
-              context,
-              PageTransition(
-                type: PageTransitionType.rightToLeft,
-                child: MySave(savedArticles: savedArticles),
-              ),
-            );
-          },
-        ),
-      ],
+      // actions: [
+      //   IconButton(
+      //     icon: SizedBox(
+      //       height: MediaQuery.of(context).size.height * 0.06,
+      //       width: MediaQuery.of(context).size.width * 0.06,
+      //       child: Image.asset("lib/icons/Bookmark.png"),
+      //     ),
+      //     onPressed: () {
+      //       Navigator.pushReplacement(
+      //         context,
+      //         PageTransition(
+      //           type: PageTransitionType.rightToLeft,
+      //           child: MySave(savedArticles: savedArticles),
+      //         ),
+      //       );
+      //     },
+      //   ),
+      // ],
     );
   }
 
