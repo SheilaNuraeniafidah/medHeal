@@ -4,6 +4,8 @@ import 'package:medical/Screens/Views/doctor_details_2.dart';
 import 'package:medical/Screens/Views/doctor_details_3.dart';
 import 'package:medical/Screens/Views/doctor_details_4.dart';
 import 'package:medical/Screens/Views/doctor_search.dart';
+import 'package:medical/Screens/Views/rumahSakit_screen.dart';
+import 'package:medical/Screens/Views/find_ambulance.dart';
 import 'package:medical/Screens/Widgets/articlePage.dart';
 import 'package:medical/Screens/Widgets/banner.dart';
 import 'package:medical/Screens/Widgets/list_doctor1.dart';
@@ -20,7 +22,7 @@ class Dashboard extends StatelessWidget {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         backgroundColor: const Color.fromARGB(255, 255, 255, 255),
-         actions: [
+        actions: [
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 40),
             child: Container(
@@ -60,12 +62,54 @@ class Dashboard extends StatelessWidget {
             height: 20,
           ),
           //Body Start fro here
-          const Row(
+          Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              listIcons(Icon: "lib/icons/stetoskop.png", text: "Dokter"),
-              listIcons(Icon: "lib/icons/rumah sakit.png", text: "Rumah Sakit"),
-              listIcons(Icon: "lib/icons/ambulans.png", text: "Ambulans"),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context, 
+                    PageTransition( 
+                      type: PageTransitionType.rightToLeft,
+                      child: const doctor_search(),
+                    )
+                  );
+                },
+                child: const listIcons(
+                  Icon: "lib/icons/stetoskop.png", 
+                  text: "Dokter"
+                ),
+              ),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context, 
+                    PageTransition( 
+                      type: PageTransitionType.rightToLeft,
+                      child: const RumahSakitScreen(),
+                    )
+                  );
+                },
+                child: const listIcons(
+                  Icon: "lib/icons/rumah sakit.png", 
+                  text: "Rumah Sakit"
+                ),
+              ),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context, 
+                    PageTransition( 
+                      type: PageTransitionType.rightToLeft,
+                      child: const FindAmbulance(),
+                    )
+                  );
+                },
+                child: const listIcons(
+                  Icon: "lib/icons/ambulans.png", 
+                  text: "Ambulans"
+                ),
+              ),
             ],
           ),
 
@@ -209,9 +253,7 @@ class Dashboard extends StatelessWidget {
                     fontWeight: FontWeight.w700,
                     color: const Color.fromARGB(255, 46, 46, 46),
                   ),
-    
-    
-                 ),
+                  ),
                 GestureDetector(
                   onTap: () {
                     Navigator.pushReplacement(
