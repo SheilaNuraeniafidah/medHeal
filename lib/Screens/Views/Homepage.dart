@@ -21,7 +21,7 @@ class _HomepageState extends State<Homepage> {
   int page = 0;
 
   List<Widget> pages = [
-    const Dashboard(), 
+    const Dashboard()
   ];
 
   @override
