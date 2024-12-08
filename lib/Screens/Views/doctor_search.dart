@@ -40,7 +40,7 @@ class doctor_search extends StatelessWidget {
         centerTitle: true,
         elevation: 0,
         toolbarHeight: 100,
-        backgroundColor: const Color(0xFF40BEF0),
+        backgroundColor: const Color.fromARGB(255, 251, 252, 252),
       ),
       body: SafeArea(
           child: Column(

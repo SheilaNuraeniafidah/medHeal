@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:medical/Screens/Views/doctor_details_2.dart';
 import 'package:medical/Screens/Views/doctor_details_3.dart';
 import 'package:medical/Screens/Views/doctor_details_4.dart';
+import 'package:medical/Screens/Views/doctor_details_5.dart';
 import 'package:medical/Screens/Views/doctor_search.dart';
 import 'package:medical/Screens/Views/rumahSakit_screen.dart';
 import 'package:medical/Screens/Views/find_ambulance.dart';
@@ -222,7 +223,7 @@ class Dashboard extends StatelessWidget {
                       Navigator.push(
                         context, 
                         PageTransition(
-                        child: const DoctorDetails3(), 
+                        child: const DoctorDetails5(), 
                         type: PageTransitionType.rightToLeft,
                         )
                       );

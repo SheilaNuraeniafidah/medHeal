@@ -5,7 +5,7 @@ import 'package:medical/Screens/Widgets/doctorList.dart';
 import 'package:page_transition/page_transition.dart';
 
 import 'Homepage.dart';
-import 'doctor_details_2.dart';
+import 'doctor_details_5.dart';
 
 class Appointment4 extends StatefulWidget {
   final String selectedDate;
@@ -90,7 +90,7 @@ class _Appointment4State extends State<Appointment4> {
               context,
               PageTransition(
                 type: PageTransitionType.fade,
-                child: const DoctorDetails2(),
+                child: const DoctorDetails5(),
               ),
             );
           },

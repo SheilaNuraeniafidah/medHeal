@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:medical/Screens/Views/doctor_details_4.dart';
 import 'package:medical/Screens/Widgets/doctorList.dart';
 import 'package:page_transition/page_transition.dart';
 
 import 'Homepage.dart';
-import 'doctor_details_2.dart';
 
 class Appointment3 extends StatefulWidget {
   final String selectedDate;
@@ -90,7 +90,7 @@ class _Appointment3State extends State<Appointment3> {
               context,
               PageTransition(
                 type: PageTransitionType.fade,
-                child: const DoctorDetails2(),
+                child: const DoctorDetails4(),
               ),
             );
           },
