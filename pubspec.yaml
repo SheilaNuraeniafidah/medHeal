@@ -35,6 +35,7 @@ dev_dependencies:
 
 flutter:
   assets:
+    - images/
     - images/dokter1.png
     - images/dokter2.png
     - images/dokter3.png
@@ -50,6 +51,9 @@ flutter:
     - lib/icons/check.png
     - lib/icons/arrow.png
     - lib/icons/female.png
+    - lib/icons/callender.png
+    - lib/icons/pencil.png
+    - lib/icons/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

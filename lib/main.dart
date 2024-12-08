@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-//import 'package:medical/Screens/Views/Homepage.dart';
-import 'package:medical/Screens/Views/Screen1.dart';
+import 'package:medical/Screens/Views/Homepage.dart';
+//import 'package:medical/Screens/Views/Screen1.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:medical/firebase_options.dart';
@@ -27,7 +27,7 @@ class Medics extends StatelessWidget {
       builder: (context, orientation, screenType) {
         return const MaterialApp(
           debugShowCheckedModeBanner: false,
-          home: Screen1(),
+          home: Homepage(),
         );
       },
     );
