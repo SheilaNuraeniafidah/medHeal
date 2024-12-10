@@ -3,7 +3,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:medical/Screens/Widgets/doctorList.dart';
 import 'package:page_transition/page_transition.dart';
-
+import 'package:firebase_auth/firebase_auth.dart';
 import 'Homepage.dart';
 import 'doctor_details_3.dart';
 
@@ -27,9 +27,11 @@ class _Appointment2State extends State<Appointment2> {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
   Future<void> _sendData() async {
+    
+    final User? user = FirebaseAuth.instance.currentUser;
     try {
       final data = {
-        'email': 'bela@mail.com', // Ganti dengan email pengguna
+        'email': user?.email ?? 'user@example.com', // Ganti dengan email pengguna
         'dokter': 'Dr. Sheila N',
         'hari': widget.selectedDay,
         'tanggal': widget.selectedDate,

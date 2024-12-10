@@ -5,6 +5,7 @@ import 'package:medical/Screens/Login-Signup/shedule_screen.dart';
 import 'package:medical/Screens/Widgets/doctorList.dart';
 import 'package:page_transition/page_transition.dart';
 import 'Homepage.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 
 class Appointment2 extends StatefulWidget {
@@ -27,9 +28,11 @@ class _Appointment2State extends State<Appointment2> {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
   Future<void> _sendData() async {
+    
+    final User? user = FirebaseAuth.instance.currentUser;
     try {
       final data = {
-        'email': 'bela@mail.com', // Ganti dengan email pengguna
+        'email': user?.email ?? 'user@example.com', // Ganti dengan email pengguna
         'dokter': 'Dr. Sheila N',
         'hari': widget.selectedDay,
         'tanggal': widget.selectedDate,
