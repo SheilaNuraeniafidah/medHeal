@@ -153,7 +153,7 @@ class _ArticlePageState extends State<ArticlePage> {
             context,
             PageTransition(
               type: PageTransitionType.rightToLeft,
-              child: Homepage(),
+              child: const Homepage(),
             ),
           );
         },
@@ -163,7 +163,7 @@ class _ArticlePageState extends State<ArticlePage> {
 
   Widget _buildSearchBar(BuildContext context) {
     return Center(
-      child: Container(
+      child: SizedBox(
         height: 45,
         width: MediaQuery.of(context).size.width * 0.85,
         child: TextField(
