@@ -107,28 +107,34 @@ class _on_boardingState extends State<on_boarding> {
                             curve: Curves.easeIn);
                       },
                       child: Container(
-                        height: MediaQuery.of(context).size.height * 0.05,
-                        width: MediaQuery.of(context).size.width * 0.3,
+                        height: MediaQuery.of(context).size.height * 0.07, 
+                        width: MediaQuery.of(context).size.width * 0.4, 
                         decoration: BoxDecoration(
-                            color: const Color.fromARGB(255, 64, 190, 240),
-                            borderRadius: BorderRadius.circular(35)),
+                          color: const Color.fromARGB(255, 64, 190, 240),
+                          borderRadius: BorderRadius.circular(35),
+                        ),
                         child: Center(
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
-                              Text(
-                                "Selanjutnya ",
-                                style: GoogleFonts.inter(
+                              Flexible(
+                                child: Text(
+                                  "Selanjutnya ",
+                                  style: GoogleFonts.inter(
                                     fontSize: 16.sp,
                                     fontWeight: FontWeight.bold,
                                     color: Colors.white,
-                                    letterSpacing: 1),
+                                    letterSpacing: 1,
+                                  ),
+                                  overflow: TextOverflow.ellipsis, 
+                                  textAlign: TextAlign.center,
+                                ),
                               ),
                               SizedBox(
-                                height:
-                                  MediaQuery.of(context).size.height * 0.06,
-                                  width: MediaQuery.of(context).size.width * 0.06,
-                                  child: Image.asset("lib/icons/arrow.png"),
+                                height: MediaQuery.of(context).size.height * 0.04, 
+                                width: MediaQuery.of(context).size.width * 0.08, 
+                                child: Image.asset("lib/icons/arrow.png"),
                               ),
                             ],
                           ),
